@@ -107,7 +107,7 @@ snowballstemmer==1.2.1
 SQLAlchemy==1.2.10
 
 systemd-python==234
-task==0.1
+
 telebot==0.0.3
 tempora==1.13
 tolist==1.0.2
