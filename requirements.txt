@@ -73,7 +73,7 @@ pycups==1.9.73
 pydocstyle==3.0.0
 pyflakes==2.0.0
 pygame==1.9.4
-pygobject==3.26.1
+
 pymacaroons==0.13.0
 pymorphy2==0.8
 pymorphy2-dicts==2.4.393442.3710985
