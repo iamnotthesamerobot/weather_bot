@@ -110,7 +110,7 @@ systemd-python==234
 
 telebot==0.0.3
 tempora==1.13
-tolist==1.0.2
+
 ubuntu-drivers-common==0.0.0
 ufw==0.35
 unattended-upgrades==0.1
