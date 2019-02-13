@@ -3,7 +3,6 @@ asn1crypto==0.24.0
 backports.functools-lru-cache==1.5
 beautifulsoup4==4.6.0
 bs4==0.0.1
-caller-module==1.0.3
 certifi==2018.11.29
 chardet==3.0.4
 cheroot==6.5.2
