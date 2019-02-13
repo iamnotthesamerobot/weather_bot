@@ -113,7 +113,7 @@ tempora==1.13
 
 
 
-unattended-upgrades==0.1
+
 urllib3==1.24.1
 usb-creator==0.3.3
 vedis==0.7.1
