@@ -25,7 +25,7 @@ getclass==1.0.3
 html5lib==0.999999999
 httplib2==0.9.2
 idna==2.8
-isclassmethod==1.0.2
+
 isstaticmethod==1.0.2
 isstring==1.0.2
 itsdangerous==1.1.0
