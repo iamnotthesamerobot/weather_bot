@@ -1,5 +1,4 @@
 appJar==0.93.0
-apturl==0.5.2
 asn1crypto==0.24.0
 assert-exists==1.0.3
 autopep8==1.4.2
