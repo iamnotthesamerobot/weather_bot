@@ -27,7 +27,7 @@ httplib2==0.9.2
 idna==2.8
 
 
-isstring==1.0.2
+
 itsdangerous==1.1.0
 jaraco.functools==1.20
 jedi==0.13.1
