@@ -18,7 +18,7 @@ DAWG-Python==0.7.2
 docopt==0.6.2
 emoji==0.5.1
 Flask==1.0.2
-fullpath==1.0.3
+
 future==0.17.0
 get==2018.11.19
 getclass==1.0.3
