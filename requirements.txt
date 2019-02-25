@@ -1,3 +1,4 @@
+bs4==4.6.3
 appJar==0.93.0
 asn1crypto==0.24.0
 backports.functools-lru-cache==1.5
