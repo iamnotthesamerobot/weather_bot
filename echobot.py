@@ -21,6 +21,7 @@ TOKEN = '709643552:AAHfwkI5IFT5i7QGjDDvdjW5nMVUolnKL4o'
 bot = telebot.TeleBot(TOKEN)
 server = Flask(__name__)
 
+print(soup)
 
 @bot.message_handler(commands=['start'])
 def start(message):
