@@ -29,6 +29,8 @@ def start(message):
 
 @bot.message_handler(func=lambda message: True, content_types=['text'])
 def echo_message(message, extracted_data = soup.select("tbody tr td")):
+    print(message)
+    print(extracted_data)
     bot.send_message(message.chat.id, 'An actual course of exchange from The PRIVATBANK')
     eu = str(extracted_data[0].contents[0])
     eu_sell = str(extracted_data[2].contents[0]).strip()
