@@ -23,13 +23,13 @@ server = Flask(__name__)
 
 
 @bot.message_handler(commands=['start'])
-def start(message,soup = BeautifulSoup(page.content, 'html.parser')):
+def start(message):
     bot.reply_to(message, 'Hello, ' + message.from_user.first_name)
     print(soup)
 
 
 @bot.message_handler(func=lambda message: True, content_types=['text'])
-def echo_message(message, extracted_data = soup.select("tbody tr td")):
+def echo_message(message):
     print(message)
     print(extracted_data)
     bot.send_message(message.chat.id, 'An actual course of exchange from The PRIVATBANK')
