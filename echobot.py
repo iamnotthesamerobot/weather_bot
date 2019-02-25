@@ -21,11 +21,11 @@ TOKEN = '709643552:AAHfwkI5IFT5i7QGjDDvdjW5nMVUolnKL4o'
 bot = telebot.TeleBot(TOKEN)
 server = Flask(__name__)
 
-print(soup)
 
 @bot.message_handler(commands=['start'])
-def start(message):
+def start(message,soup = BeautifulSoup(page.content, 'html.parser')):
     bot.reply_to(message, 'Hello, ' + message.from_user.first_name)
+    print(soup)
 
 
 @bot.message_handler(func=lambda message: True, content_types=['text'])
