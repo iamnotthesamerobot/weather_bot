@@ -32,7 +32,7 @@ def start(message):
 def echo_message(message):
     print(message)
    
-    bot.send_message(message.chat.id, 'An actual course of exchange from The PRIVATBANK')
+    bot.reply_to(message, 'An actual course of exchange from The PRIVATBANK')
     
 @server.route('/' + TOKEN, methods=['POST'])
 def getMessage():
