@@ -20,7 +20,7 @@ server = Flask(__name__)
 def start(message):
     bot.reply_to(message, 'Hello, ' + message.from_user.first_name)
 
-@bot.message_handler(func=lambda message: True, regexp="Z")
+@bot.message_handler(func=lambda message: True, content_types=['text'])
 def echo_message(message):
     page = requests.get("https://privatbank.ua")
     soup = BeautifulSoup(page.content, 'html.parser')
@@ -44,7 +44,7 @@ def echo_message(message):
     end_msg = str('The info is actual on ' + str(time.ctime()))
     bot.send_message(message.chat.id, end_msg)
     
-@bot.message_handler(func=lambda message: True, content_types=['text'])
+@bot.message_handler(func=lambda message: True, regexp="Z")
 def echo_message(message):
     bot.reply_to(message, message.text)
 
