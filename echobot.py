@@ -11,7 +11,7 @@ import telebot
 import requests
 from bs4 import BeautifulSoup
  
-TOKEN = '574405257:AAFdIn5ko9ZoNLgQZZkGnzGncZIFvohjEqo'
+TOKEN = '771254834:AAHwMQtxFeL4WUBTDNxWs4JvsTRA8ucIAHY'
 bot = telebot.TeleBot(TOKEN)
 server = Flask(__name__)
  
