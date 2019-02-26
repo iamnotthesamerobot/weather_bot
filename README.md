@@ -1,2 +1,2 @@
-# friendly-fiesta
-test bot
+# weatherbot
+
