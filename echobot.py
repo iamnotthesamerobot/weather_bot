@@ -22,7 +22,11 @@ def start(message):
 
 @bot.message_handler(func=lambda message: True, regexp="Z")
 def echo_message(message):
-    bot.reply_to(message, "YES!")
+    page = requests.get("https://privatbank.ua")
+    soup = BeautifulSoup(page.content, 'html.parser')
+    extracted_data = soup.select("tbody tr td")
+    eu = str(extracted_data[0].contents[0])
+    bot.reply_to(message, str(eu))
     
 @bot.message_handler(func=lambda message: True, content_types=['text'])
 def echo_message(message):
