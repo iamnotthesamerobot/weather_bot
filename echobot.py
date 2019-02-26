@@ -80,7 +80,7 @@ print('8')
 @server.route("/")
 def webhook():
     bot.remove_webhook()
-    bot.set_webhook(url='https://botto8.herokuapp.com/' + TOKEN)
+    bot.set_webhook(url='https://botto20190226.herokuapp.com/' + TOKEN)
     return "!", 200
     print('9')
 
