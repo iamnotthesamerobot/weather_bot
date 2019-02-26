@@ -22,7 +22,7 @@ def start(message):
 @bot.message_handler(func=lambda message: True, regexp="Z")
 def echo_message(message):
     bot.reply_to(message, message.text)
-
+"""
 @bot.message_handler(func=lambda message: True, content_types=['text'])
 def echo_message(message):
     headers = {
@@ -65,7 +65,7 @@ def echo_message(message):
     bot.send_message(message.chat.id, str(msg_3))
     bot.send_message(message.chat.id, str(msg_4))
     bot.send_message(message.chat.id, str(msg_5))
-    
+   """ 
 
 
 @server.route('/' + TOKEN, methods=['POST'])
