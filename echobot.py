@@ -7,24 +7,22 @@ Created on Fri Feb  8 17:29:46 2019
 import os
 from flask import Flask, request
 import telebot
-print('1')
+ 
 import requests
 from bs4 import BeautifulSoup
-print('2')
+ 
 TOKEN = '574405257:AAFdIn5ko9ZoNLgQZZkGnzGncZIFvohjEqo'
 bot = telebot.TeleBot(TOKEN)
 server = Flask(__name__)
-print('3')
+ 
 @bot.message_handler(commands=['start'])
 def start(message):
     bot.reply_to(message, 'Hello, ' + message.from_user.first_name)
-    print('4')
     
 @bot.message_handler(func=lambda message: True, regexp="Z")
 def echo_message(message):
     bot.reply_to(message, message.text)
-    print('5')
-"""
+ 
 @bot.message_handler(func=lambda message: True, content_types=['text'])
 def echo_message(message):
     headers = {
@@ -67,23 +65,17 @@ def echo_message(message):
     bot.send_message(message.chat.id, str(msg_3))
     bot.send_message(message.chat.id, str(msg_4))
     bot.send_message(message.chat.id, str(msg_5))
-   """ 
-
-print('6')
+ 
 @server.route('/' + TOKEN, methods=['POST'])
 def getMessage():
     bot.process_new_updates([telebot.types.Update.de_json(request.stream.read().decode("utf-8"))])
     return "!", 200
-    print('7')
 
-print('8')
 @server.route("/")
 def webhook():
     bot.remove_webhook()
     bot.set_webhook(url='https://botto20190226.herokuapp.com/' + TOKEN)
     return "!", 200
-    print('9')
 
-print('11')
 if __name__ == "__main__":
     server.run(host="0.0.0.0", port=int(os.environ.get('PORT', 5000)))
