@@ -54,15 +54,15 @@ def echo_message(message):
     msg_1 = (str(city) + ' ' + str(cur_date))
     msg_2 = ('Actual ' + str(temp_now) + ' Feeling ' + str(temp_feel) + \
              '\nNight ' + str(temp[0].contents[0]) + ' Day ' + str(temp[1].contents[0]))
-    msg_3 = ('Road condition by 8 A.M.: ' + str(road_cond_8) + \
-             '\nRoad condition by 8 P.M.: ' + str(road_cond_20) + \
-             '\nWind speed: ' + str(wind_km_h) + ' km/h')
+   # msg_3 = ('Road condition by 8 A.M.: ' + str(road_cond_8) + \
+    #         '\nRoad condition by 8 P.M.: ' + str(road_cond_20) + \
+     #        '\nWind speed: ' + str(wind_km_h) + ' km/h')
     msg_4 = (str(sunrise) + ' ' + str(sunset) + '\n' + str(d_lenght) + '\n' + str(longer))
     msg_5 = ('Moon: ' + str(moonrise) + ' ' + str(moonset) + '\n' + str(f_moon) + '\n' + str(moon_phase))
           
     bot.send_message(message.chat.id, str(msg_1))
     bot.send_message(message.chat.id, str(msg_2))
-    bot.send_message(message.chat.id, str(msg_3))
+   # bot.send_message(message.chat.id, str(msg_3))
     bot.send_message(message.chat.id, str(msg_4))
     bot.send_message(message.chat.id, str(msg_5))
  
