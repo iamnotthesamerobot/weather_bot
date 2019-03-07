@@ -33,15 +33,13 @@ def echo_message(message):
     page_w = requests.get("https://www.gismeteo.com/weather-dnipro-5077/3-days/", headers=headers)
     soup_w = BeautifulSoup(page_w.content, 'html.parser')
 
-    print(soup_w.find_all('h1')[0].contents[0]) #weather in Dn
-
-
     def cloudy(i):
         aa = str(soup_w.find_all(class_="img")[i].find(class_="tooltip"))
         aa = re.sub(';|&', '#', aa, count=0).split(r'#')[4]
         return aa
 
-
+    print(soup_w.find_all('h1')[0].contents[0]) #weather in Dn
+    bot.send_message(message.chat.id, str(soup_w.find_all('h1')[0].contents[0]))
     for i in range(1, 13):
         n = i - 1
         N = 2
