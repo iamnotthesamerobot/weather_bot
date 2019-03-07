@@ -30,33 +30,33 @@ def echo_message(message):
       }
 
     page_w = requests.get("https://www.gismeteo.com/weather-dnipro-5077/3-days/", headers=headers)
-soup_w = BeautifulSoup(page_w.content, 'html.parser')
+    soup_w = BeautifulSoup(page_w.content, 'html.parser')
 
-print(soup_w.find_all('h1')[0].contents[0]) #weather in Dn
-
-
-def cloudy(i):
-    aa = str(soup_w.find_all(class_="img")[i].find(class_="tooltip"))
-    aa = re.sub(';|&', '#', aa, count=0).split(r'#')[4]
-    return aa
+    print(soup_w.find_all('h1')[0].contents[0]) #weather in Dn
 
 
-for i in range(1, 13):
-    n = i - 1
-    N = 2
-    if i == 1:
-        day = '\n' + str(soup_w.find_all(class_="link blue")[2].contents[0]) + '\nNight   '
-    elif i == 5:
-        day = '\n' + str(soup_w.find_all(class_="link blue")[3].contents[0]) + '\nNight   '
-    elif i == 9:
-        day = '\n' + str(soup_w.find_all(class_="link blue")[4].contents[0]) + '\nNight   '
-    elif i == 2 or i == 6 or i == 10:
-        day = 'Morning '
-    elif i == 3 or i == 7 or i == 11:
-        day = 'Day     '
-    else:
-        day = 'Evening '
-    print(day + str(soup_w.find_all(class_="unit unit_temperature_c")[n].contents[0]) + ' ' + str(cloudy(i)))
+    def cloudy(i):
+        aa = str(soup_w.find_all(class_="img")[i].find(class_="tooltip"))
+        aa = re.sub(';|&', '#', aa, count=0).split(r'#')[4]
+        return aa
+
+
+    for i in range(1, 13):
+        n = i - 1
+        N = 2
+        if i == 1:
+            day = '\n' + str(soup_w.find_all(class_="link blue")[2].contents[0]) + '\nNight   '
+        elif i == 5:
+            day = '\n' + str(soup_w.find_all(class_="link blue")[3].contents[0]) + '\nNight   '
+        elif i == 9:
+            day = '\n' + str(soup_w.find_all(class_="link blue")[4].contents[0]) + '\nNight   '
+        elif i == 2 or i == 6 or i == 10:
+            day = 'Morning '
+        elif i == 3 or i == 7 or i == 11:
+            day = 'Day     '
+        else:
+            day = 'Evening '
+        print(day + str(soup_w.find_all(class_="unit unit_temperature_c")[n].contents[0]) + ' ' + str(cloudy(i)))
 
     '''
 
