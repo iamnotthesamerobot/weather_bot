@@ -57,7 +57,8 @@ def echo_message(message):
             day = 'Day     '
         else:
             day = 'Evening '
-        print(day + str(soup_w.find_all(class_="unit unit_temperature_c")[n].contents[0]) + ' ' + str(cloudy(i)))
+        msg1 = (day + str(soup_w.find_all(class_="unit unit_temperature_c")[n].contents[0]) + ' ' + str(cloudy(i)))
+        bot.send_message(message.chat.id, str(msg_1))
 
     '''
 
