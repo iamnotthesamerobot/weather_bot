@@ -29,27 +29,36 @@ def echo_message(message):
         'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.9; rv:45.0) Gecko/20100101 Firefox/45.0'
       }
 
-    page_w = requests.get("https://www.gismeteo.com/weather-dnipro-5077/", headers = headers)
-    soup_w = BeautifulSoup(page_w.content, 'html.parser')
-    filter_1 = soup_w.find(class_="tab tooltip").find("div")
-    cur_date = filter_1.find(class_="date ").contents[0].strip()
-    temp = filter_1.find_all(class_="unit unit_temperature_c")
-    feelings = soup_w.select('a div span span')
-    temp_now = feelings[0].contents[0].strip()
-    temp_feel = feelings[2].contents[0].strip()
-    filter_2 = soup_w.select('body section div div div')
-    city = filter_2[0].contents[0]
-    d_lenght = soup_w.find_all(class_="id_item title")[0].contents[0]
-    sunrise = soup_w.find_all(class_="id_item")[1].contents[0]
-    sunset = soup_w.find_all(class_="id_item")[2].contents[0]
-    longer = soup_w.find_all(class_="txt")[0].contents[0].strip()
-    f_moon = soup_w.find_all(class_="txt")[1].contents[0]
-    moon_phase = soup_w.find_all(class_="id_item title")[1].contents[0].strip()
-    road_cond_8 = soup_w.find_all(class_="w_roadcondition__description")[2].contents[0].strip()
-    road_cond_20 = soup_w.find_all(class_="w_roadcondition__description")[6].contents[0].strip()
-    moonrise = soup_w.find_all(class_="id_item")[4].contents[0]
-    moonset = soup_w.find_all(class_="id_item")[5].contents[0]
-    wind_km_h = soup_w.find_all(class_="unit unit_wind_km_h")[6].contents[0].strip()
+    page_w = requests.get("https://www.gismeteo.com/weather-dnipro-5077/3-days/", headers=headers)
+soup_w = BeautifulSoup(page_w.content, 'html.parser')
+
+print(soup_w.find_all('h1')[0].contents[0]) #weather in Dn
+
+
+def cloudy(i):
+    aa = str(soup_w.find_all(class_="img")[i].find(class_="tooltip"))
+    aa = re.sub(';|&', '#', aa, count=0).split(r'#')[4]
+    return aa
+
+
+for i in range(1, 13):
+    n = i - 1
+    N = 2
+    if i == 1:
+        day = '\n' + str(soup_w.find_all(class_="link blue")[2].contents[0]) + '\nNight   '
+    elif i == 5:
+        day = '\n' + str(soup_w.find_all(class_="link blue")[3].contents[0]) + '\nNight   '
+    elif i == 9:
+        day = '\n' + str(soup_w.find_all(class_="link blue")[4].contents[0]) + '\nNight   '
+    elif i == 2 or i == 6 or i == 10:
+        day = 'Morning '
+    elif i == 3 or i == 7 or i == 11:
+        day = 'Day     '
+    else:
+        day = 'Evening '
+    print(day + str(soup_w.find_all(class_="unit unit_temperature_c")[n].contents[0]) + ' ' + str(cloudy(i)))
+
+    '''
 
     msg_1 = (str(city) + ' ' + str(cur_date))
     msg_2 = ('Actual ' + str(temp_now) + ' Feeling ' + str(temp_feel) + \
@@ -65,6 +74,8 @@ def echo_message(message):
    # bot.send_message(message.chat.id, str(msg_3))
     bot.send_message(message.chat.id, str(msg_4))
     bot.send_message(message.chat.id, str(msg_5))
+ 
+ '''
  
 @server.route('/' + TOKEN, methods=['POST'])
 def getMessage():
