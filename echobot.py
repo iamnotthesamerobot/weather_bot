@@ -32,7 +32,7 @@ def echo_message(message):
         'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.9; rv:45.0) Gecko/20100101 Firefox/45.0'
       }
 
-    page_w = requests.get("https://www.gismeteo.com/weather-dnipro-5077/3-days/", headers=headers)
+    page_w = requests.get("https://www.gismeteo.com/weather-amsterdam-1200/3-days/", headers=headers)
     soup_w = BeautifulSoup(page_w.content, 'html.parser')
  
     for i in range(0, 12):
@@ -60,7 +60,7 @@ def getMessage():
 @server.route("/")
 def webhook():
     bot.remove_webhook()
-    bot.set_webhook(url='https://botto20190226.herokuapp.com/' + TOKEN)
+    bot.set_webhook(url='https://HEROKU.herokuapp.com/' + TOKEN)
     return "!", 200
 
 if __name__ == "__main__":
