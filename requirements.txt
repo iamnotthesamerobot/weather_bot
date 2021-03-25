@@ -91,7 +91,7 @@ python-language-server==0.21.2
 python-telegram-bot==10.1.0
 pytz==2018.5
 pyxdg==0.25
-PyYAML==3.12
+PyYAML==5.4
 QScintilla==2.10.8
 query-string==2018.11.20
 regex==2018.8.29
