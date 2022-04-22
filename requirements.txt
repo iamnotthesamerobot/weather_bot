@@ -79,7 +79,7 @@ pymacaroons==0.13.0
 pymorphy2==0.8
 pymorphy2-dicts==2.4.393442.3710985
 PyNaCl==1.1.2
-PyPDF2==1.26.0
+PyPDF2==1.27.5
 PyQt5==5.11.3
 PyQt5-sip==4.19.13
 pyRFC3339==1.0
