@@ -95,7 +95,7 @@ PyYAML==3.12
 QScintilla==2.10.8
 query-string==2018.11.20
 regex==2018.8.29
-reportlab==3.4.0
+reportlab==3.5.55
 request==2018.11.20
 requests==2.21.0
 requests-unixsocket==0.1.5
